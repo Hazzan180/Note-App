@@ -1,0 +1,292 @@
+/* Created By Hazzan */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+*
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root
+{
+    --main-color:#8e44ad;
+    --red:#e74c3c;
+    --oragen:#f39c12;
+    --white:#fff;
+    --black:#2c3e50;
+    --light-color:#888;
+    --light-bg:#eee;
+    --border:.1rem solid rgba(0,0,0,.2);
+}
+*
+{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+}
+*::selection
+{
+    background-color: var(--main-color);
+    color: #fff;
+}
+*::-webkit-scrollbar
+{
+    height: .5rem;
+    width: 0.5rem;
+}
+*::-webkit-scrollbar-track
+{
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb
+{
+    background-color: var(--main-color);
+}
+body
+{
+    background-color: var(--light-bg);
+}
+ 
+.dark-theme
+{
+    --white:#222;
+    --black:#fff;
+    --light-color:#aaa;
+    --light-bg:#333;
+    --border:.1rem solid rgba(255,255,255,.2);
+}
+
+.nav
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: var( --white);
+}
+.title
+{
+    display: flex;
+}
+.title h1
+{
+    color: var( --main-color);
+}
+.mode img
+{
+    width: 50px;
+}
+.wrapper
+{
+    margin: 50px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 265px);
+}
+.wrapper li
+{
+    height: 250px;
+    list-style: none;
+    background-color: var(  --white);
+    border-radius: 5px;
+    padding: 15px 20px 20px;
+}
+.add-box, .icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.add-box .icon
+{
+    height: 78px;
+    width: 78px;
+    border-radius: 50%;
+    border: 2px dashed var(--main-color);
+    font-size: 30px;
+    color: var(--main-color);
+    cursor: pointer;
+}
+.add-box p
+{
+    color: var(--main-color);
+    font-weight: 500;
+    margin-top: 20px;
+}
+.wrapper .note
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.note p
+{
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: 500;
+}
+.note span
+{
+    display: block;
+    margin-top: 7px;
+    color: var(--black);
+    font-size: 16px;
+} 
+.botton-content, .settings .menu li, .popup, header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.note .hr
+{
+    padding-top: 10px;
+    border-bottom: var(--border);
+}
+.botton-content span
+{
+    color: var(--black);
+    font-size: 16px;
+}
+.botton-content .settings i
+{
+    color: var(--black);
+    font-size: 16px;
+    cursor: pointer;
+}
+.settings
+{
+    position: relative;
+}
+.settings .menu
+{
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    padding: 5px 0;
+    background-color: var( --white);
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease;
+}
+.settings:hover .menu
+{
+    transform: scale(1);
+}
+.settings .menu li
+{
+    height: 25px;
+    border-radius: 0;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 17px 15px;
+}
+.menu li:hover
+{
+    background-color: var( --light-bg);
+}
+.menu li i
+{
+    padding-right: 8px;
+}
+.popup-box, .popup-box .popup
+{
+    opacity: 0;
+    display:none;
+    transition: all 0.25s ease;
+}
+.popup-box.show, .popup-box .popup
+{
+    display: block;
+    opacity: 1;
+}
+.popup-box
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.popup-box .popup
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    max-width: 400px;
+    width: 100%;
+    justify-content: center;
+}
+.popup .content
+{
+    width: calc(100% - 15px);
+    background: var( --white);
+    border-radius: 5px;
+}
+.popup .content header
+{
+    padding: 15px 25px;
+    border-bottom: var(--border);
+}
+.content header p
+{
+    font-size: 20px;
+    font-weight: 500;
+}
+.content header span
+{
+    color: var(--black);
+    cursor: pointer;
+    font-size: 23px;
+}
+.content form
+{
+    margin: 15px 25px  35px;
+}
+form, .row, label
+{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.content form :where(input, textarea)
+{
+    width: 100%;
+    height: 50px;
+    border: var(--border);
+    border-radius: 4px;
+    padding: 0 15px;
+}
+.content form textarea
+{
+    height: 150px;
+    resize: none;
+    padding: 8px 15px;
+}
+.content form button
+{
+    width: 100%;
+    height: 50px;
+    color: var( --white);
+    font-size: 17px;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.content form button:hover
+{
+    background-color: var( --black);
+}
+/* Created By Hazzan */
