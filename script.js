@@ -28,14 +28,14 @@ var isEdited = false, editedId;
 // toggle the add note 
 addbox.addEventListener("click", () => {
     popupBox.classList.add("show");
-    title.value = "";
-    textArea.value = "";
-    popupTitle.innerHTML = "Add a Note"
-    addBtn.textContent = "Add Note"
 });
 
 closeIcon.addEventListener("click", () => {
     popupBox.classList.remove("show");
+    title.value = "";
+    textArea.value = "";
+    popupTitle.innerHTML = "Add a Note"
+    addBtn.textContent = "Add Note"
 });
 
 window.addEventListener("click", event => {
